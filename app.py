@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello, Flask!"
+    return "<h1>Uber Quick Reserve<h1>"
 
 
 @app.route("/hello/<name>")
