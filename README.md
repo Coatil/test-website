@@ -7,7 +7,8 @@ UberWalks take advantage of Flask, a web framework that allows the Python backen
 ## Using the Application
 To use the application, click this [link](https://uber-walks-mifkqappa-hyperson1c.vercel.app/)\: <br>
 
-You will be shown a landing page with instructions and an HTML form at the button. <br> 
+You will be shown a landing page with instructions and an HTML form at the button. After entering in the addresses and clicking the submit button, you will be shown the pickup location, the savings, and a map. <br> 
+
 Here is an example address\: <br>
 your location\: 110 Wellesley St W, Toronto, ON M7A 1A2 <br>
 your destination\: 290 Bremner Blvd, Toronto, ON M5V 3L9 <br>
