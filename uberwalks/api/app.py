@@ -32,7 +32,7 @@ def gfg():
 
         # algorithm that finds the pickup point
         personDur = 0
-        carDur = 1
+        driverDur = 1
 
         frontX = latitude1
         frontY = longitude1
@@ -64,16 +64,16 @@ def gfg():
             results = gmaps.distance_matrix(location3, locBlueP, mode="driving", language="en", avoid=None, units="metric",
             departure_time=datetime.utcnow(), arrival_time=None, transit_mode="rail",
             transit_routing_preference="fewer_transfers", traffic_model="pessimistic", region=".ca" )
-            carDur = results["rows"][0]["elements"][0]["duration"]["value"]
+            driverDur = results["rows"][0]["elements"][0]["duration"]["value"]
 
             # finds whether the durations are close enough
-            if personDur - 150 <= carDur and carDur <= personDur + 150:
+            if personDur - 150 <= driverDur and driverDur <= personDur + 150:
                     isFound = False
             # if not, changes the variables appropriately to find the new potential pickup point
-            elif personDur > carDur:
+            elif personDur > driverDur:
                     backX = middleX
                     backY = middleY
-            elif carDur > personDur:
+            elif driverDur > personDur:
                     frontX = middleX
                     frontY = middleY
 
@@ -82,7 +82,7 @@ def gfg():
         pickup_address = reverse_geocode_results[0]["formatted_address"]
 
         # calculates the discount
-        seconds = (personDur + carDur) / 2
+        seconds = (personDur + driverDur) / 2
         discount = round(seconds * 0.01, 2)
 
         # geocodes the pickup address into latitudes and longitudes
