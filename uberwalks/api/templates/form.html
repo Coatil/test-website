@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>UberWalk</title>
+    <style type="text/css">
+      h1 {
+        border-color: #ba55d3;
+        border-width: 3px;
+        border-style: solid;
+        border-radius: 10px;
+        background-color: #dda0dd;
+        padding: 20px;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      p {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      li {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Welcome to UberWalk!</h1>
+      <p>This is our submission for the 2023 Uber Global Hackthon.</p>
+      <p>By Kirk, Thomas, Andrew, and Cyke.</p>
+      <p>
+        More details of our application is on the report. Our application
+        calculates the pickup point between the user and their destination. This
+        pickup point is special: it takes both the user and the driver an equal
+        amount of time to arrive at this location. This ensures that the person
+        is encouraged to walk, while the car drives less as the path towards the
+        destination is more direct. Ultimately, neither the driver nor the user
+        has to wait for each other, as they arrive to the pickup point at the
+        same time.
+      </p>
+
+      <p>To use our application, follow these instructions very carefully.</p>
+      <ol>
+        <li>
+          Our application takes 3 addresses. The addresses required are labeled
+          next to each box.
+        </li>
+        <li>
+          The addresses must be in this <strong>EXACT</strong> format: street #,
+          street name, city, Canada. Ex: 1455 Glen Abbey Gate, Oakville, Canada
+        </li>
+        <li>
+          Otherwise, the safest way to input a valid address is use the address
+          provided by Google Maps when you search for this location. Ex: This
+          address "1455 Glen Abbey Gate, Oakville, ON L6M 2G5" is completely
+          valid, and it was taken from Google.
+        </li>
+        <li>
+          Press submit, and you the pickup point and how long it takes to arrive
+          at the pickup point will be displayed to you.
+        </li>
+        <li>
+          You will also see the discount in dollars. More on this in our report
+        </li>
+      </ol>
+    </main>
+  </body>
+</html>
+
+<form action="{{ url_for("gfg")}}" method="post">
+<label for="loc1">Your location:</label>
+<input type="text" id="location1" name="loc1" placeholder="your location" />
+<label for="loc2">Where you want to go:</label>
+<input type="text" id="location2" name="loc2" placeholder="your destination" />
+<label for="loc3">Your Uber driver's current location:</label>
+<input
+  type="text"
+  id="location3"
+  name="loc3"
+  placeholder="the driver's location"
+/>
+<button type="submit">Submit!</button>
