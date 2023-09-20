@@ -17,9 +17,18 @@ No one is allowed to contribute to our project, as the submission must be strict
 
 ## Credits
 ### Built With
-* Google Maps API - External Library
+* Python Client for Google Maps Services - External Library
 * Flask - Web Framework
 * Vercel - Web Hosting
+
+Hyperson\<i\>c used functions from the Python Client for Google Maps Services. These functions are\:
+* gmaps.geocode
+* gmaps.reverse_geocode
+* gmaps.distance_matrix
+
+Hyperson\<i\c used functions from Flask. We did not make these ourselves, but the logic our original work.
+
+All other code is made my Hyperson\<i\c.
 
 ### Hyperson\<i\>c 
 Hyperson\<i\>c consists of four members\:
