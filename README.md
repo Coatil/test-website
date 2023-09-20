@@ -9,8 +9,8 @@ You will be shown a landing page with instructions and an HTML form at the butto
 
 Here are example addresses\: <br>
 <strong>your location\:</strong> 110 Wellesley St W, Toronto, ON M7A 1A2 <br>
-your destination\: 290 Bremner Blvd, Toronto, ON M5V 3L9 <br>
-the driver's location\: 235 Bloor St E, Toronto, ON M4W 1C8 <br>
+<strong>your destination\:</strong> 290 Bremner Blvd, Toronto, ON M5V 3L9 <br>
+<strong>the driver's location\:</strong> 235 Bloor St E, Toronto, ON M4W 1C8 <br>
 
 ## Contribution Guidelines
 No one is allowed to contribute to our project, as the submission must be strictly the original and unique work of Hyperson\<i\>c. You (including judges) are allowed to view the files of this project and use the applicaiton via the link.
