@@ -14,6 +14,9 @@ your location\: 110 Wellesley St W, Toronto, ON M7A 1A2 <br>
 your destination\: 290 Bremner Blvd, Toronto, ON M5V 3L9 <br>
 the driver's location\: 235 Bloor St E, Toronto, ON M4W 1C8 <br>
 
+## Contribution Guidelines
+No one is allowed to contribute to our project, as the submission must be strictly the original and unique work of Hyperson\<i\>c. You (including judges) are allowed to view the files of this project and use the website via the link.
+
 ## Credits
 ### Hyperson\<i\>c 
 Hyperson\<i\>c consists of four members\:
@@ -21,9 +24,6 @@ Hyperson\<i\>c consists of four members\:
 - Thomas Duong\: Co-Leader
 - Andrew Li\: Member
 - Luiz Guilherme
-
-## Contribution Guidelines
-No one is allowed to contribute to our project, as the submission must be strictly the original and unique work of Hyperson\<i\>c. You (including judges) are allowed to view the files of this project and use the website via the link.
 
 Hyperson<\i\>c <br>
 ![Team logo.](https://i.ibb.co/51bgVL5/UGHlogo.png)
