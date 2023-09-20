@@ -2,10 +2,12 @@ from flask import Flask, render_template, request
 
 import googlemaps
 from datetime import datetime
+from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
 #makes Flask object
+app.config["API_KEY"] = os.getenv("API_KEY")
 
 @app.route('/', methods = ["GET", "POST"])
 def gfg():
@@ -14,6 +16,7 @@ def gfg():
         location2 = request.form.get("loc2")
         location3 = request.form.get("loc3")
 
+        load_dotenv()
         API_KEY = os.getenv("API_KEY")
         gmaps = googlemaps.Client(api_key=API_KEY)
 
