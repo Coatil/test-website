@@ -18,16 +18,15 @@ the driver's location\: 235 Bloor St E, Toronto, ON M4W 1C8 <br>
 No one is allowed to contribute to our project, as the submission must be strictly the original and unique work of Hyperson\<i\>c. You (including judges) are allowed to view the files of this project and use the applicaiton via the link.
 
 ## Credits
+### Built With
+* Google Maps API - External Library
+* Flask - Web framework
+* Vercel - Web hosting
+
 ### Hyperson\<i\>c 
 Hyperson\<i\>c consists of four members\:
 - Kirk Poppa\: Team Leader
 - Thomas Duong\: Co-Leader
 - Andrew Li\: Member
 - Luiz Guilherme\: Member
-
-### Built With
-* Google Maps API - External Library
-* Flask - Web framework
-* Vercel - Web hosting
-
 ![Team logo.](https://i.ibb.co/51bgVL5/UGHlogo.png)
