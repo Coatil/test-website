@@ -25,5 +25,4 @@ Hyperson\<i\>c consists of four members\:
 - Andrew Li\: Member
 - Luiz Guilherme\: Member
 
-Hyperson<\i\>c <br>
 ![Team logo.](https://i.ibb.co/51bgVL5/UGHlogo.png)
