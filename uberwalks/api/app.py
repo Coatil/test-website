@@ -18,7 +18,7 @@ def gfg():
         # loads API key
         gmaps = googlemaps.Client(api_key=API_KEY)
 
-        # geocodes the locations of the user, destination, and car
+        # geocodes the locations of the user, destination, and driver
         results = gmaps.geocode(location1)
         latitude1 = results[0]["geometry"]["location"]["lat"]
         longitude1 = results[0]["geometry"]["location"]["lng"]
@@ -62,7 +62,7 @@ def gfg():
             transit_routing_preference="fewer_transfers", traffic_model="best_guess", region=".ca" )
             personDur = results["rows"][0]["elements"][0]["duration"]["value"]
 
-            # finds the duration between the car and the Place ID
+            # finds the duration between the driver and the Place ID
             results = gmaps.distance_matrix(location3, locBlueP, mode="driving", language="en", avoid=None, units="metric",
             departure_time=datetime.utcnow(), arrival_time=None, transit_mode="rail",
             transit_routing_preference="fewer_transfers", traffic_model="pessimistic", region=".ca" )
