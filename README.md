@@ -5,6 +5,7 @@ UberWalks is a web application developed by Hyperson\<i\>c as the submission for
 UberWalks take advantage of Flask, a web framework that allows the Python backend to be displayed using HTML frontend. To host our application, Vercel is used. We used these technologies and languages because they are simple and fast, and they are adequate for our purposes.
 
 ## Using the Application
-To use the application, click this link\: \n
-That is all! More instructions on the application itself.
+To use the application, click this link\: <br>
+
+You will be shown a landing page with instructions and an HTML form at the button. Here is an example address:
 
