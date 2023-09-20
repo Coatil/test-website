@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 
 import googlemaps
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 #makes Flask object
@@ -13,6 +14,7 @@ def gfg():
         location2 = request.form.get("loc2")
         location3 = request.form.get("loc3")
 
+        API_KEY = os.getenv("API_KEY")
         gmaps = googlemaps.Client(api_key=API_KEY)
 
         # geocodes the locations of the user, destination, and car
