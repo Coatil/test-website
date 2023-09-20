@@ -26,7 +26,7 @@ Hyperson\<i\>c used functions from the Python Client for Google Maps Services. T
 * gmaps.reverse_geocode
 * gmaps.distance_matrix
 
-Hyperson\<i\c used functions from Flask. We did not make these ourselves, but the logic our original work.
+Hyperson\<i\c used functions from Flask. The logic and the way we used these functions are our original work.
 
 All other code is made my Hyperson\<i\c.
 
