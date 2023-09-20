@@ -11,11 +11,13 @@ app.config["API_KEY"] = os.getenv("API_KEY")
 
 @app.route('/', methods = ["GET", "POST"])
 def gfg():
+    # requests locations from HTML form 
     if request.method == "POST":
         location1 = request.form.get("loc1")
         location2 = request.form.get("loc2")
         location3 = request.form.get("loc3")
 
+        # loads API key
         load_dotenv()
         API_KEY = os.getenv("API_KEY")
         gmaps = googlemaps.Client(api_key=API_KEY)
@@ -33,7 +35,7 @@ def gfg():
         latitude3 = geocode_results[0]["geometry"]["location"]["lat"]
         longitude3 = geocode_results[0]["geometry"]["location"]["lat"]
 
-        # binary search algorithm that finds the pickup point where the user and driver arrives at the same time
+        # algorithm that finds the pickup point
         personDur = 0
         carDur = 1
 
@@ -80,28 +82,44 @@ def gfg():
                     frontX = middleX
                     frontY = middleY
 
+        # reverse geocodes the pickup point into an address
         reverse_geocode_results = gmaps.reverse_geocode((middleX, middleY))
         pickup_address = reverse_geocode_results[0]["formatted_address"]
+
+        # calculates the discount
         seconds = (personDur + carDur) / 2
         discount = round(seconds * 0.01, 2)
+
+        # geocodes the pickup address into latitudes and longitudes
         url_geocode = gmaps.geocode(pickup_address)
         url_geocode_lat = str(url_geocode[0]["geometry"]["location"]["lat"])
         url_geocode_lng = str(url_geocode[0]["geometry"]["location"]["lng"])
 
+        # prepares variables to be concatenated into static map url
         latitude1 = str(latitude1)
         longitude1 = str(longitude1)
+
+        # the latitude and longitude of the center of the map
         midX = (float(url_geocode_lat) + float(latitude1)) / 2.0
         midY = (float(url_geocode_lng) + float(longitude1)) / 2.0
+
+        # finds the address of the center of the map
         midReverse = gmaps.reverse_geocode((midX, midY))
         midReverseResults = midReverse[0]["formatted_address"]
         midReverseResultsAddress = midReverseResults.replace(" ","+")
+
+        # prepares custom zoom levels 
         zoom = '15'
         if seconds >= 600 and seconds <= 1900:
               zoom = '14'
         if seconds >= 1900:
               zoom = '13'
+        # the url for the static map, it concatenates multiple strings in order to have a custom map
         url = "https://maps.googleapis.com/maps/api/staticmap?center=" + midReverseResultsAddress + "&zoom=" + zoom + "&size=600x300&maptype=roadmap&markers=color:red%7Clabel:B%7C" + url_geocode_lat + "," + url_geocode_lng + "&markers=color:black%7Clabel:A%7C" + latitude1 + "," + longitude1 + "&key=" + API_KEY
+
+        # renders the results page
         return render_template("index.html", pickup_address=pickup_address, seconds=seconds, discount=discount, url=url)
+    # renders the landing page
     return render_template("form.html")
 
 if __name__ == '__main__':
