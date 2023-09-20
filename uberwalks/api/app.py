@@ -13,6 +13,7 @@ def gfg():
         location1 = request.form.get("loc1")
         location2 = request.form.get("loc2")
         location3 = request.form.get("loc3")
+        # collects the inputs we got from our forms in the shape of POST requests
 
         # loads API key
         gmaps = googlemaps.Client(api_key=API_KEY)
