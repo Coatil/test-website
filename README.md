@@ -3,7 +3,7 @@
 UberWalks is a web application developed by Hyperson\<i\>c as the submission for the coding track of the 2023 Uber Global Hackathon. The application takes three user-input addresses\: the user's address, the destination address, and the driver's address. With this, the application calculates an optimal pickup point where the user and the driver arrives at the same time. UberWalks reduces travelling time, limits emissions from ridesharing services, and improve affordability for low-income individuals.
 
 ## Using the Application
-To use the application, click this [link](https://uber-walks-mifkqappa-hyperson1c.vercel.app/) <br>
+To use the application, click this [link](https://uber-walks-mifkqappa-hyperson1c.vercel.app/). <br>
 
 You will be shown a landing page with instructions and an HTML form at the button. After entering in the addresses and clicking the submit button, you will be shown the pickup location, how long it takes to walk there, the savings, and a map. <br> 
 
