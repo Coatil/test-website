@@ -23,10 +23,10 @@ No one is allowed to contribute to our project, as the submission must be strict
 * Flask - Web framework
 * Vercel - Web hosting
 
-### Hyperson\<i\>c <br>
+### Hyperson\<i\>c 
 Hyperson\<i\>c consists of four members\:
 - Kirk Poppa\: Team Leader
 - Thomas Duong\: Co-Leader
 - Andrew Li\: Member
-- Luiz Guilherme\: Member
+- Luiz Guilherme\: Member <br>
 ![Team logo.](https://i.ibb.co/51bgVL5/UGHlogo.png)
