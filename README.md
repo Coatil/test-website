@@ -14,5 +14,12 @@ your location\: 110 Wellesley St W, Toronto, ON M7A 1A2 <br>
 your destination\: 290 Bremner Blvd, Toronto, ON M5V 3L9 <br>
 the driver's location\: 235 Bloor St E, Toronto, ON M4W 1C8 <br>
 
+## Credits
+Hyperson\<i\>c consists of four members\:
+- Kirk Poppa\: Team Leader
+- Thomas Duong\: Co-Leader
+- Andrew Li\: Member
+- s
+
 Hyperson<\i\>c <br>
 ![Team logo.](https://i.ibb.co/51bgVL5/UGHlogo.png)
