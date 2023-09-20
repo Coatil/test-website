@@ -18,19 +18,19 @@ def gfg():
         gmaps = googlemaps.Client(api_key=API_KEY)
 
         # geocodes the locations of the user, destination, and car
-        geocode_results = gmaps.geocode(location1)
-        latitude1 = geocode_results[0]["geometry"]["location"]["lat"]
-        longitude1 = geocode_results[0]["geometry"]["location"]["lng"]
+        results = gmaps.geocode(location1)
+        latitude1 = results[0]["geometry"]["location"]["lat"]
+        longitude1 = results[0]["geometry"]["location"]["lng"]
 
-        geocode_results = gmaps.geocode(location2)
-        latitude2 = geocode_results[0]["geometry"]["location"]["lat"]
-        longitude2 = geocode_results[0]["geometry"]["location"]["lng"]
+        results = gmaps.geocode(location2)
+        latitude2 = results[0]["geometry"]["location"]["lat"]
+        longitude2 = results[0]["geometry"]["location"]["lng"]
 
-        geocode_results = gmaps.geocode(location3)
-        latitude3 = geocode_results[0]["geometry"]["location"]["lat"]
-        longitude3 = geocode_results[0]["geometry"]["location"]["lat"]
+        results = gmaps.geocode(location3)
+        latitude3 = results[0]["geometry"]["location"]["lat"]
+        longitude3 = results[0]["geometry"]["location"]["lat"]
 
-        # algorithm that finds the pickup point
+        # preparing variables for the algorithm
         personDur = 0
         driverDur = 1
 
@@ -43,6 +43,7 @@ def gfg():
         middleX = 0.0
         middleY = 0.0
 
+        # algorithm that finds the pickup point
         isFound = True
         while isFound:
             # finds the potential pickup point by dividing the journey in halves
@@ -55,10 +56,10 @@ def gfg():
             locBlueP = "place_id:" + results[0]["place_id"]
 
             # finds the duration between the user and the Place ID
-            distance_matrix_results = gmaps.distance_matrix(location1, locBlueP, mode="walking", language="en", avoid=None,
+            results = gmaps.distance_matrix(location1, locBlueP, mode="walking", language="en", avoid=None,
             units="metric", departure_time=datetime.utcnow(), arrival_time=None, transit_mode="rail",
             transit_routing_preference="fewer_transfers", traffic_model="best_guess", region=".ca" )
-            personDur = distance_matrix_results["rows"][0]["elements"][0]["duration"]["value"]
+            personDur = results["rows"][0]["elements"][0]["duration"]["value"]
 
             # finds the duration between the car and the Place ID
             results = gmaps.distance_matrix(location3, locBlueP, mode="driving", language="en", avoid=None, units="metric",
@@ -78,25 +79,25 @@ def gfg():
                     frontY = middleY
 
         # reverse geocodes the pickup point into an address
-        reverse_geocode_results = gmaps.reverse_geocode((middleX, middleY))
-        pickup_address = reverse_geocode_results[0]["formatted_address"]
+        results = gmaps.reverse_geocode((middleX, middleY))
+        pickupAddress = results[0]["formatted_address"]
 
         # calculates the discount
         seconds = (personDur + driverDur) / 2
         discount = round(seconds * 0.01, 2)
 
         # geocodes the pickup address into latitudes and longitudes
-        url_geocode = gmaps.geocode(pickup_address)
-        url_geocode_lat = str(url_geocode[0]["geometry"]["location"]["lat"])
-        url_geocode_lng = str(url_geocode[0]["geometry"]["location"]["lng"])
+        URLGeocode = gmaps.geocode(pickupAddress)
+        URLGeocodeLat = str(URLGeocode[0]["geometry"]["location"]["lat"])
+        URLGeocodeLng = str(URLGeocode[0]["geometry"]["location"]["lng"])
 
         # prepares variables to be concatenated into static map url
         latitude1 = str(latitude1)
         longitude1 = str(longitude1)
 
         # the latitude and longitude of the center of the map
-        midX = (float(url_geocode_lat) + float(latitude1)) / 2.0
-        midY = (float(url_geocode_lng) + float(longitude1)) / 2.0
+        midX = (float(URLGeocodeLat) + float(latitude1)) / 2.0
+        midY = (float(URLGeocodeLng) + float(longitude1)) / 2.0
 
         # finds the address of the center of the map
         midReverse = gmaps.reverse_geocode((midX, midY))
@@ -110,7 +111,7 @@ def gfg():
         if seconds >= 1900:
               zoom = '13'
         # the url for the static map, it concatenates multiple strings in order to have a custom map
-        url = "https://maps.googleapis.com/maps/api/staticmap?center=" + midReverseResultsAddress + "&zoom=" + zoom + "&size=600x300&maptype=roadmap&markers=color:red%7Clabel:B%7C" + url_geocode_lat + "," + url_geocode_lng + "&markers=color:black%7Clabel:A%7C" + latitude1 + "," + longitude1 + "&key=" + API_KEY
+        url = "https://maps.googleapis.com/maps/api/staticmap?center=" + midReverseResultsAddress + "&zoom=" + zoom + "&size=600x300&maptype=roadmap&markers=color:red%7Clabel:B%7C" + URLGeocodeLat + "," + URLGeocodeLng + "&markers=color:black%7Clabel:A%7C" + latitude1 + "," + longitude1 + "&key=" + API_KEY
 
         # renders the results page
         return render_template("index.html", pickup_address=pickup_address, seconds=seconds, discount=discount, url=url)
@@ -119,4 +120,3 @@ def gfg():
 
 if __name__ == '__main__':
     app.run()
-
