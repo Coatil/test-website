@@ -18,8 +18,8 @@ No one is allowed to contribute to our project, as the submission must be strict
 ## Credits
 ### Built With
 * Google Maps API - External Library
-* Flask - Web framework
-* Vercel - Web hosting
+* Flask - Web Framework
+* Vercel - Web Hosting
 
 ### Hyperson\<i\>c 
 Hyperson\<i\>c consists of four members\:
