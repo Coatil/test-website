@@ -29,5 +29,5 @@ Hyperson\<i\>c consists of four members\:
 - Thomas Duong\: Co-Leader
 - Andrew Li\: Member
 - Luiz Guilherme\: Member
-<br>
+
 ![Team logo.](https://i.ibb.co/51bgVL5/UGHlogo.png)
